@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk5rqbqycu3v8"]
+
+[ext_resource type="Script" path="res://src/scripts/creditos.gd" id="1_wd2be"]
+[ext_resource type="PackedScene" uid="uid://dejw2sfstm7nr" path="res://src/fondoEspaciol.tscn" id="2_784xq"]
+[ext_resource type="Texture2D" uid="uid://cng3ybj1u1xnq" path="res://src/assents/controlador/Sprites/flat-light/flatLight22.png" id="2_nik8m"]
+
+[sub_resource type="GDScript" id="GDScript_dtqqd"]
+script/source = "extends TouchScreenButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wd2be")
+
+[node name="Control" parent="." instance=ExtResource("2_784xq")]
+layout_mode = 1
+offset_left = -68.0
+offset_top = -30.0
+offset_right = 80.0
+offset_bottom = 48.0
+
+[node name="creador" type="Label" parent="."]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 294.0
+offset_right = 916.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 30
+text = "Creador: Martin Miroslavov Dimitrov"
+
+[node name="sonidos" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 346.0
+offset_right = 929.0
+offset_bottom = 388.0
+theme_override_font_sizes/font_size = 30
+text = "Musica: Bittersweet Anthem_BGM_CC-BY"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 460.0
+offset_right = 774.0
+offset_bottom = 502.0
+theme_override_font_sizes/font_size = 30
+text = "Gracias por Jugar
+"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 402.0
+offset_right = 889.0
+offset_bottom = 444.0
+theme_override_font_sizes/font_size = 30
+text = "Desarrollado en Godot Engine 4.0"
+
+[node name="github" type="Label" parent="."]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 512.0
+offset_right = 858.0
+offset_bottom = 549.0
+theme_override_colors/font_color = Color(0.3645, 0.431325, 0.81, 1)
+text = "https://github.com/martiin-md/martinmd.github.io"
+
+[node name="atras" type="TouchScreenButton" parent="."]
+texture_filter = 1
+texture_normal = ExtResource("2_nik8m")
+script = SubResource("GDScript_dtqqd")
